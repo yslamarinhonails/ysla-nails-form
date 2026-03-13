@@ -24,6 +24,15 @@ input:focus{outline:none;border:1px solid #BF932A;}
 button{margin-top:20px;width:100%;padding:14px;border:none;border-radius:10px;background:#50311D;color:white;font-size:16px;cursor:pointer;transition:0.3s;}
 button:hover{background:#806248;}
 #preview{margin-top:15px;max-width:100%;border-radius:10px;display:none;}
+
+/* AUMENTO DE ESCALA PARA CELULAR */
+@media (max-width:600px){
+.container{
+transform:scale(1.35);
+transform-origin:center;
+}
+}
+
 </style>
 </head>
 <body>
@@ -44,9 +53,8 @@ button:hover{background:#806248;}
 </div>
 
 <form action="https://formsubmit.co/lucasvini3222@gmail.com" method="POST" enctype="multipart/form-data">
-  <!-- desativa captcha e define assunto -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="Novo formulário - Ysla Marinho Nails">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Novo formulário - Ysla Marinho Nails">
 
 <div class="question">
 <h2>Em que dia da semana você costuma fazer manutenção?</h2>
@@ -114,22 +122,22 @@ const progress = document.getElementById("progress");
 const progressBar = document.getElementById("progressBar");
 
 function startQuiz(){
-  document.getElementById("intro").style.display = "none";
-  progressBar.style.display = "block";
-  questions[0].classList.add("active");
+document.getElementById("intro").style.display = "none";
+progressBar.style.display = "block";
+questions[0].classList.add("active");
 }
 
 function next(){
-  questions[current].classList.remove("active");
-  current++;
-  questions[current].classList.add("active");
-  progress.style.width = (current/(questions.length-1))*100 + "%";
+questions[current].classList.remove("active");
+current++;
+questions[current].classList.add("active");
+progress.style.width = (current/(questions.length-1))*100 + "%";
 }
 
 function previewImage(event){
-  const preview = document.getElementById("preview");
-  preview.src = URL.createObjectURL(event.target.files[0]);
-  preview.style.display="block";
+const preview = document.getElementById("preview");
+preview.src = URL.createObjectURL(event.target.files[0]);
+preview.style.display="block";
 }
 </script>
 </body>
