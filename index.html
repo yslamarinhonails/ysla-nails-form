@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ysla Marinho Nails</title>
 
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
 body{
@@ -72,9 +75,7 @@ to{opacity:1; transform:translateY(0);}
 
 .radio-group label{display:block;margin:8px 0;cursor:pointer;}
 
-input[type="text"],
-input[type="date"],
-input[type="file"]{
+input[type="text"], input[type="date"], input[type="file"]{
 width:100%;
 padding:12px;
 border-radius:8px;
@@ -82,10 +83,7 @@ border:1px solid #806248;
 margin-top:10px;
 }
 
-input:focus{
-outline:none;
-border:1px solid #BF932A;
-}
+input:focus{outline:none;border:1px solid #BF932A;}
 
 button{
 margin-top:20px;
@@ -109,26 +107,6 @@ border-radius:10px;
 display:none;
 }
 
-/* RESPONSIVO CELULAR */
-@media (max-width:600px){
-
-body{
-align-items:flex-start;
-padding:0;
-}
-
-.container{
-width:100%;
-max-width:100%;
-min-height:100vh;
-border-radius:0;
-padding:25px;
-}
-
-h1{font-size:28px;}
-h2{font-size:22px;}
-
-}
 </style>
 </head>
 
@@ -136,8 +114,11 @@ h2{font-size:22px;}
 
 <div class="container">
 
+<!-- TELA INICIAL -->
 <div class="intro" id="intro">
+
 <h1>Ysla Marinho Nails</h1>
+
 <p>Oii minha linda, eu me chamo Ysla Marinho e criei esse formulário para conhecer melhor suas preferências.</p>
 
 <h2>Sobre esse formulário</h2>
@@ -147,6 +128,7 @@ h2{font-size:22px;}
 <p>Assim consigo preparar um atendimento mais personalizado e trazer ideias que combinem ainda mais com você.</p>
 
 <button class="start-btn" onclick="startQuiz()">Começar</button>
+
 </div>
 
 <div class="progress-bar" id="progressBar">
@@ -158,8 +140,9 @@ h2{font-size:22px;}
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Novo formulário - Ysla Marinho Nails">
 
+<!-- PERGUNTA 1 -->
 <div class="question">
-<h2>Em que dia da semana você costuma fazer manutenção?</h2>
+<h2>Pergunta 1: Em que dia da semana você costuma fazer manutenção?</h2>
 
 <div class="radio-group">
 <label><input type="radio" name="pergunta1" value="Segunda"> Segunda</label>
@@ -173,53 +156,86 @@ h2{font-size:22px;}
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 2 -->
 <div class="question">
-<h2>Quais horários você tem disponibilidade?</h2>
-<input type="text" name="pergunta2" placeholder="Digite sua resposta">
+<h2>Pergunta 2: Quais horários você tem disponibilidade?</h2>
+<input type="text" name="pergunta2" placeholder="Digite sua resposta...">
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 3 -->
 <div class="question">
-<h2>Quais tonalidades de cores você mais ama?</h2>
-<input type="text" name="pergunta3">
+<h2>Pergunta 3: Quais tonalidades de cores você mais ama?</h2>
+<input type="text" name="pergunta3" placeholder="Digite sua resposta..."> 
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 4 -->
 <div class="question">
-<h2>Quais formatos de unha você mais gosta?</h2>
-<input type="text" name="pergunta4">
+<h2>Pergunta 4: Quais formatos de unha em gel você mais gosta?</h2>
+<input type="text" name="pergunta4" placeholder="Digite sua resposta...">
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 5 -->
 <div class="question">
-<h2>Quando foi a última vez que você cuidou da sua autoestima e fez as unhas?</h2>
+<h2>Pergunta 5: Quando foi a última vez que você cuidou da sua autoestima e fez as unhas?</h2>
 <input type="date" name="pergunta5">
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 6 -->
 <div class="question">
-<h2>Envie uma foto de como suas unhas estão atualmente</h2>
+<h2>Pergunta 6: Envie uma foto de como suas unhas estão atualmente</h2>
+
 <input type="file" name="pergunta6" accept="image/*" onchange="previewImage(event)">
+
 <img id="preview">
+
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 7 -->
 <div class="question">
-<h2>Você prefere unhas naturais ou decoradas?</h2>
-<input type="text" name="pergunta7">
+<h2>Pergunta 7: Você prefere unhas mais puxadas para naturalidade ou decoradas?</h2>
+<input type="text" name="pergunta7" placeholder="Digite sua resposta...">
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
+<!-- PERGUNTA 8 (NOVA) -->
 <div class="question">
-<h2>Chegamos no final do formulário princesa, agora deixe pra mim o seu @ do Instagram para eu saber quem é você.</h2>
-<input type="text" name="instagram" placeholder="@exemplo">
+
+<h2>Pergunta 8: No atendimento você prefere conversar bastante ou assistir um filminho na Netflix?</h2>
+
+<div class="radio-group">
+
+<label><input type="radio" name="pergunta8" value="Netflix"> Filminho na Netflix</label>
+
+<label><input type="radio" name="pergunta8" value="Conversar"> Conversar muitooo kkkk</label>
+
+</div>
+
+<button type="button" onclick="next()">Próxima</button>
+
+</div>
+
+<!-- PERGUNTA FINAL -->
+<div class="question">
+
+<h2>Chegamos no final do formulário princesa, agora deixe o seu Instagram para eu saber quem é você.</h2>
+
+<input type="text" name="instagram" placeholder="@seuinstagram">
+
 <button type="submit">Enviar respostas</button>
+
 </div>
 
 </form>
+
 </div>
 
 <script>
+
 let current = 0;
 const questions = document.querySelectorAll(".question");
 const progress = document.getElementById("progress");
@@ -243,6 +259,7 @@ const preview = document.getElementById("preview");
 preview.src = URL.createObjectURL(event.target.files[0]);
 preview.style.display="block";
 }
+
 </script>
 
 </body>
