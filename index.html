@@ -2,49 +2,150 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ysla Marinho Nails</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{background:#D4CABC;display:flex;justify-content:center;align-items:center;min-height:100vh;}
-.container{width:95%;max-width:600px;background:white;padding:35px;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,0.2);}
+
+body{
+background:#D4CABC;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+width:95%;
+max-width:600px;
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
 h1{text-align:center;color:#50311D;margin-bottom:15px;}
 h2{color:#50311D;margin-bottom:15px;}
+
 .intro{text-align:center;}
 .intro p{margin-top:10px;line-height:1.6;}
-.start-btn{margin-top:25px;background:#BF932A;color:white;border:none;padding:15px;border-radius:10px;cursor:pointer;font-size:16px;width:100%;}
+
+.start-btn{
+margin-top:25px;
+background:#BF932A;
+color:white;
+border:none;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+width:100%;
+}
+
 .start-btn:hover{background:#806248;}
-.progress-bar{width:100%;height:8px;background:#eee;border-radius:10px;margin-bottom:25px;overflow:hidden;display:none;}
-.progress{height:100%;width:0%;background:#BF932A;transition:0.4s;}
+
+.progress-bar{
+width:100%;
+height:8px;
+background:#eee;
+border-radius:10px;
+margin-bottom:25px;
+overflow:hidden;
+display:none;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:#BF932A;
+transition:0.4s;
+}
+
 .question{display:none;animation:fade 0.4s;}
 .question.active{display:block;}
-@keyframes fade{from{opacity:0; transform:translateY(10px);}to{opacity:1; transform:translateY(0);}}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
 .radio-group label{display:block;margin:8px 0;cursor:pointer;}
-input[type="text"], input[type="date"], input[type="file"]{width:100%;padding:12px;border-radius:8px;border:1px solid #806248;margin-top:10px;}
-input:focus{outline:none;border:1px solid #BF932A;}
-button{margin-top:20px;width:100%;padding:14px;border:none;border-radius:10px;background:#50311D;color:white;font-size:16px;cursor:pointer;transition:0.3s;}
+
+input[type="text"],
+input[type="date"],
+input[type="file"]{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #806248;
+margin-top:10px;
+}
+
+input:focus{
+outline:none;
+border:1px solid #BF932A;
+}
+
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#50311D;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
 button:hover{background:#806248;}
-#preview{margin-top:15px;max-width:100%;border-radius:10px;display:none;}
 
-/* AUMENTO DE ESCALA PARA CELULAR */
+#preview{
+margin-top:15px;
+max-width:100%;
+border-radius:10px;
+display:none;
+}
+
+/* RESPONSIVO CELULAR */
 @media (max-width:600px){
-.container{
-transform:scale(1.35);
-transform-origin:center;
-}
+
+body{
+align-items:flex-start;
+padding:0;
 }
 
+.container{
+width:100%;
+max-width:100%;
+min-height:100vh;
+border-radius:0;
+padding:25px;
+}
+
+h1{font-size:28px;}
+h2{font-size:22px;}
+
+}
 </style>
 </head>
+
 <body>
+
 <div class="container">
 
-<!-- TELA INICIAL -->
 <div class="intro" id="intro">
 <h1>Ysla Marinho Nails</h1>
 <p>Oii minha linda, eu me chamo Ysla Marinho e criei esse formulário para conhecer melhor suas preferências.</p>
+
 <h2>Sobre esse formulário</h2>
+
 <p><strong>Criei um formulário</strong> para entender melhor os gostos e preferências das minhas clientes quando o assunto é unhas.</p>
+
 <p>Assim consigo preparar um atendimento mais personalizado e trazer ideias que combinem ainda mais com você.</p>
+
 <button class="start-btn" onclick="startQuiz()">Começar</button>
 </div>
 
@@ -53,11 +154,13 @@ transform-origin:center;
 </div>
 
 <form action="https://formsubmit.co/lucasvini3222@gmail.com" method="POST" enctype="multipart/form-data">
+
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Novo formulário - Ysla Marinho Nails">
 
 <div class="question">
 <h2>Em que dia da semana você costuma fazer manutenção?</h2>
+
 <div class="radio-group">
 <label><input type="radio" name="pergunta1" value="Segunda"> Segunda</label>
 <label><input type="radio" name="pergunta1" value="Terça"> Terça</label>
@@ -66,6 +169,7 @@ transform-origin:center;
 <label><input type="radio" name="pergunta1" value="Sexta"> Sexta</label>
 <label><input type="radio" name="pergunta1" value="Sábado"> Sábado</label>
 </div>
+
 <button type="button" onclick="next()">Próxima</button>
 </div>
 
@@ -140,5 +244,6 @@ preview.src = URL.createObjectURL(event.target.files[0]);
 preview.style.display="block";
 }
 </script>
+
 </body>
 </html>
